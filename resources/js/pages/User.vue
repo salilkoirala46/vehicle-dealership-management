@@ -9,10 +9,10 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th style="width: 10px">#</th>
-                            <th>Task</th>
-                            <th>Progress</th>
-                            <th style="width: 40px">Label</th>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>

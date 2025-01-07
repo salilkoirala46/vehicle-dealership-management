@@ -12,12 +12,13 @@ import FooterComponent from "./components/Footer.vue";
 import NavbarComponent from "./components/Navbar.vue";
 import SidebarComponent from "./components/Sidebar.vue";
 import MainheaderComponent from "./components/Mainheader.vue";
+import InputText from "./components/InputText.vue";
 
 app.component("Footer", FooterComponent);
 app.component("Navbar", NavbarComponent);
 app.component("Sidebar", SidebarComponent);
 app.component("Mainheader", MainheaderComponent);
-
+app.component("InputText", InputText);
 // Make axios globally available to all components
 app.config.globalProperties.$axios = axios;
 

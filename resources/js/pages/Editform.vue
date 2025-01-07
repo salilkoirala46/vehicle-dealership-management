@@ -1,6 +1,5 @@
 <template>
     <div class="content-wrapper" style="min-height: 1604.8px">
-        <!-- Content Header (Page header) -->
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -17,21 +16,9 @@
                     </div>
                 </div>
             </div>
-            <!-- /.container-fluid -->
         </section>
 
-        <!-- Main content -->
         <section class="content">
-            <!-- Display success message -->
-            <!-- <div v-if="successMessage" class="alert alert-success" role="alert">
-                {{ successMessage }}
-            </div> -->
-
-            <div v-if="showPopup" class="popup-overlay">
-                <div class="popup-content">
-                    <p>{{ successMessage }}</p>
-                </div>
-            </div>
             <div class="row">
                 <div class="col-12">
                     <div class="card card-primary">
@@ -51,71 +38,46 @@
                         <div class="card-body">
                             <form>
                                 <div class="row">
-                                    <!-- Vehicle Type -->
                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="vehicleType"
-                                                >Vehicle Type</label
-                                            >
-                                            <input
-                                                type="text"
-                                                id="vehicleType"
-                                                class="form-control"
-                                                v-model="form.type"
-                                                placeholder="e.g., SUV, Sedan, Truck"
-                                            />
-                                        </div>
+                                        <InputText
+                                            label="vehicleType"
+                                            type="text"
+                                            id="vehicleType"
+                                            v-model="form.type"
+                                            placeholder="e.g., SUV, Sedan, Truck"
+                                        />
                                     </div>
-                                    <!-- Vehicle Make -->
                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="vehicleMake"
-                                                >Make</label
-                                            >
-                                            <input
-                                                type="text"
-                                                id="vehicleMake"
-                                                class="form-control"
-                                                v-model="form.make"
-                                                placeholder="e.g., Toyota, Ford"
-                                            />
-                                        </div>
+                                        <InputText
+                                            label="vehicleMake"
+                                            type="text"
+                                            id="vehicleMake"
+                                            v-model="form.make"
+                                            placeholder="e.g., Toyota, Ford"
+                                        />
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <!-- Vehicle Model -->
                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="vehicleModel"
-                                                >Model</label
-                                            >
-                                            <input
-                                                type="text"
-                                                id="vehicleModel"
-                                                class="form-control"
-                                                v-model="form.model"
-                                                placeholder="e.g., Corolla, Mustang"
-                                            />
-                                        </div>
+                                        <InputText
+                                            label="vehicleModel"
+                                            type="text"
+                                            id="vehicleModel"
+                                            v-model="form.model"
+                                            placeholder="e.g., Corolla, Mustang"
+                                        />
                                     </div>
-                                    <!-- Vehicle Year -->
                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="vehicleYear"
-                                                >Year</label
-                                            >
-                                            <input
-                                                type="number"
-                                                id="vehicleYear"
-                                                class="form-control"
-                                                v-model="form.year"
-                                                placeholder="e.g., 2023"
-                                            />
-                                        </div>
+                                        <InputText
+                                            label="vehicleYear"
+                                            type="number"
+                                            id="vehicleYear"
+                                            v-model="form.year"
+                                            placeholder="e.g., 2023"
+                                        />
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <!-- Fuel Type -->
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="fuelType"
@@ -136,37 +98,25 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <!-- Body Type -->
                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="bodyType"
-                                                >Body Type</label
-                                            >
-                                            <input
-                                                type="text"
-                                                id="bodyType"
-                                                class="form-control"
-                                                v-model="form.bodyType"
-                                                placeholder="e.g., Sedan, Hatchback"
-                                            />
-                                        </div>
+                                        <InputText
+                                            label="bodyType"
+                                            type="text"
+                                            id="bodyType"
+                                            v-model="form.bodyType"
+                                            placeholder="e.g., Sedan, Hatchback"
+                                        />
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <!-- Variant -->
                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="inputVariant"
-                                                >Variant</label
-                                            >
-                                            <input
-                                                type="text"
-                                                id="inputVariant"
-                                                class="form-control"
-                                                v-model="form.variantT"
-                                                placeholder="e.g., SE, XLE"
-                                            />
-                                        </div>
+                                        <InputText
+                                            label="inputVariant"
+                                            type="text"
+                                            id="inputVariant"
+                                            v-model="form.variantT"
+                                            placeholder="e.g., SE, XLE"
+                                        />
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -192,7 +142,6 @@
                                                     >
                                                 </div>
                                             </div>
-                                            <!-- Image preview -->
                                             <div
                                                 v-if="imagePreview"
                                                 class="image-preview mt-3"
@@ -207,7 +156,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Submit Button -->
                                 <div class="row">
                                     <div class="col-12">
                                         <button
@@ -221,13 +169,10 @@
                                 </div>
                             </form>
                         </div>
-                        <!-- /.card-body -->
                     </div>
-                    <!-- /.card -->
                 </div>
             </div>
         </section>
-        <!-- /.content -->
     </div>
 </template>
 
