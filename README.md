@@ -297,6 +297,26 @@ brew services start mysql
 sudo service mysql start
 ```
 
+**`SQLSTATE[HY000] [1045] Access denied for user 'sail'` (Sail)**
+
+The MySQL Docker volume was created before the credentials in `.env` were set, so the `sail` user was never initialized. Wipe the volume and restart:
+
+```bash
+./vendor/bin/sail down -v
+./vendor/bin/sail up -d
+# Wait ~60 seconds for MySQL to fully initialize, then:
+./vendor/bin/sail artisan migrate:fresh --seed
+```
+
+**`Duplicate column name 'make'` during migration**
+
+A legacy migration attempts to add a column that already exists in the initial schema. This is guarded in the current code, but if you hit it on an older checkout run `migrate:fresh` to rebuild cleanly:
+
+```bash
+./vendor/bin/sail artisan migrate:fresh --seed   # Docker
+php artisan migrate:fresh --seed                 # manual
+```
+
 **`php_pdo_mysql` extension missing**
 
 ```bash
